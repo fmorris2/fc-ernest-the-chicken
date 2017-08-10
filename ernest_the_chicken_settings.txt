@@ -1,0 +1,102 @@
+Ernest the Chicken Settings:
+	Talk to Veronica (0) (Center tile: (3110, 3329, 0), Radius: 7)
+		-SETTING 32 CHANGES FROM 0 --> 1
+	Talk to Professor Oddenstein (0, 0/1) (Center tile: (3110, 3366, 2), Radius: 5)
+		-SETTING 32 CHANGES FROM 1 --> 2
+	
+	NOW, IN ANY ORDER, YOU CAN COLLECT THE FOLLOWING MATERIALS:
+	
+	Pressure Guage (271):
+		Collect Fish food (272)
+			-Fish food found at (3108, 3357, 1), Radius: 4
+		Collect Poison (273)
+			-Poison found at (3098, 3365, 0), Radius: 3
+		Use Poison on Fish food
+			-Poisoned fish food (274) appears in inventory
+		Use Poisoned fish food with fountain
+			-Fountain is at (3089, 3336, 0), Radius: 7
+		Wait until Fountain contains "Search" option
+			-Search Fountain
+				-Go through continue dialogue
+					-Pressure gauge (271) appears in inventory
+	
+	Rubber Tube (276):
+		Get spade
+			-Spade found at (3121, 3358, 0), Radius: 4
+		Collect Key (275)
+			Requirements:
+				Spade (952)
+			-Search Compost heap (3086, 3360, 0), Radius: 4
+				-Key appears in inventory
+			-Pick up Rubber tube (276) ((3110, 3367, 0), Radius: 4)
+			
+	Oil can:
+		Pull Lever A & Lever B down
+			Lever B: (3116, 9752, 0)
+				-Varbit 1789 for setting 33 changes from 0 --> 1
+			Lever A: (3108, 9746, 0)
+				-Varbit 1788 for setting 33 changes from 0 --> 1
+				-Varbit 1796 for setting 668 changes from 0 --> 1
+				-Varbit 1801 for setting 668 changes from 0 --> 1
+		Pull Lever D down: (3107, 9765, 0)
+			-Varbit 1791 for setting 33 changes from 0 --> 1
+			-Varbit 1797 for setting 668 changes from 0 --> 1
+			-Varbit 1802 for setting 668 changes from 0 --> 1
+		Pull Lever A & Lever B up
+			Lever A:
+				-Varbit 1788 for setting 33 changes from 1 --> 0
+				-Varbit 1796 for setting 668 changes from 1 --> 0
+				-Varbit 1801 for setting 668 changes from 1 --> 0
+			Lever B:
+				-Varbit 1789 for setting 33 changes from 1 --> 0
+				-Varbit 1800 for setting 668 changes from 0 --> 1
+		Pull Lever E & Lever F down ((3097, 9765, 0), Radius: 4)
+			Lever E:
+				-Varbit 1792 for setting 33 changes from 0 --> 1
+				-Varbit 1797 for setting 668 changes from 1 --> 0
+				-Varbit 1802 for setting 668 changes from 1 --> 0
+			Lever F:
+				-Varbit 1793 for setting 33 changes from 0 --> 1
+				-Varbit 1794 for setting 668 changes from 0 --> 1
+				-Varbit 1795 for setting 668 changes from 0 --> 1
+				-Varbit 1800 for setting 668 changes from 1 --> 0
+		Pull Lever C down  ((3110,9761,0), Radius: 4)
+			Lever C:
+				-Varbit 1790 for setting 33 changes from 0 --> 1
+				-Varbit 1798 for setting 668 changes from 0 --> 1
+		Pull Lever E up 
+			Lever E:
+				-Varbit 1792 for setting 33 changes from 1 --> 0
+				-Varbit 1794 for setting 668 changes from 1 --> 0
+				-Varbit 1799 for setting 668 changes from 0 --> 1
+				-Varbit 1802 for setting 668 changes from 0 --> 1
+		Pick up Oil can (277) (3094,9755,0), Radius: 4
+		
+		Talk to Professor Oddenstein ()
+			-Go through dialogue
+				-Wait for setting change:
+					-Setting 32 changes from 2 --> 3
+		
+		Go through click to continue dialogue with Ernest
+			
+				
+		Basement Door Data:
+			Door 1: ID: 144, (3108,9758,0)
+			Door 2: ID: 139, (3105,9760,0)
+			Door 3: ID: 145, (3102,9758,0)
+			Door 4: ID: 140, (3100,9760,0)
+			Door 5: ID: 143, (3097,9763,0)
+			Door 6: ID: 138, (3100,9765,0)
+			Door 7: ID: 137, (3105,9765,0)
+			Door 8: ID: 142, (3102,9763,0)
+			Door 9: ID: 141, (3100,9755,0)
+			
+			
+			
+		
+				
+				
+		
+				
+		
+	
