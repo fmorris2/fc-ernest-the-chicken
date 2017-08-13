@@ -1,14 +1,16 @@
 package scripts.fc.missions.fc_ernest_the_chicken.tasks;
 
+import java.util.function.BooleanSupplier;
+
 import org.tribot.api.interfaces.Positionable;
 import org.tribot.api2007.types.RSTile;
 
 import scripts.fc.api.interaction.EntityInteraction;
 import scripts.fc.api.interaction.impl.npcs.dialogue.NpcDialogue;
-import scripts.fc.framework.task.BasicDialogueTask;
+import scripts.fc.framework.task.BasicInteractionTask;
 import scripts.fc.missions.fc_ernest_the_chicken.data.ETCSettings;
 
-public class StartQuest extends BasicDialogueTask
+public class StartQuest extends BasicInteractionTask
 {
 	private static final long serialVersionUID = 1L;
 
@@ -40,6 +42,18 @@ public class StartQuest extends BasicDialogueTask
 	protected EntityInteraction getInteraction()
 	{
 		return new NpcDialogue("Talk-to", "Veronica", 10, 0);
+	}
+
+	@Override
+	protected BooleanSupplier getWaitCondition()
+	{
+		return null;
+	}
+
+	@Override
+	protected int getWaitTimeout()
+	{
+		return 0;
 	}
 
 }
