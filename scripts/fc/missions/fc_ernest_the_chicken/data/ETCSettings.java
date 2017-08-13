@@ -3,13 +3,13 @@ package scripts.fc.missions.fc_ernest_the_chicken.data;
 import java.util.Arrays;
 
 import scripts.fc.api.interaction.impl.npcs.dialogue.DialogueThread;
+import scripts.fc.framework.data.Vars;
 import scripts.fc.framework.quest.AnonBool;
 import scripts.fc.framework.quest.InvBankBool;
 import scripts.fc.framework.quest.InvBankBool.TYPE;
 import scripts.fc.framework.quest.Order;
 import scripts.fc.framework.quest.QuestState;
 import scripts.fc.framework.quest.SettingBool;
-import scripts.fc.missions.fc_ernest_the_chicken.tasks.pressure_guage.FountainTask;
 import scripts.fc.missions.fc_ernest_the_chicken.FCErnestTheChicken;
 
 public enum ETCSettings
@@ -47,6 +47,7 @@ public enum ETCSettings
 		(
 			new InvBankBool(FCErnestTheChicken.FISH_FOOD, 1, TYPE.NOT_IN_EITHER, true)
 			.and(new InvBankBool(FCErnestTheChicken.POISONED_FISH_FOOD, 1, TYPE.NOT_IN_EITHER, true))
+			.and(new AnonBool(() -> !Vars.get().get("hasPoisonedFountain", false), true))
 		)
 	),
 	
@@ -56,6 +57,7 @@ public enum ETCSettings
 		(
 			new InvBankBool(FCErnestTheChicken.POISON, 1, TYPE.NOT_IN_EITHER, true)
 			.and(new InvBankBool(FCErnestTheChicken.POISONED_FISH_FOOD, 1, TYPE.NOT_IN_EITHER, true))
+			.and(new AnonBool(() -> !Vars.get().get("hasPoisonedFountain", false), true))
 		)
 	),
 	
@@ -81,7 +83,7 @@ public enum ETCSettings
 	(
 		new QuestState
 		(
-			new AnonBool(() -> FountainTask.isFountainSearchable(), true)
+			new AnonBool(() -> Vars.get().get("hasPoisonedFountain", false), true)
 		)
 	),
 	

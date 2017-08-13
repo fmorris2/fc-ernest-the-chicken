@@ -3,6 +3,11 @@ package scripts.fc.missions.fc_ernest_the_chicken;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+import org.tribot.api2007.MessageListener;
+import org.tribot.script.interfaces.MessageListening07;
+
+import scripts.fc.api.interaction.impl.npcs.dialogue.DialogueThread;
+import scripts.fc.framework.data.Vars;
 import scripts.fc.framework.quest.QuestScriptManager;
 import scripts.fc.framework.requirement.Requirement;
 import scripts.fc.framework.script.FCMissionScript;
@@ -10,7 +15,7 @@ import scripts.fc.framework.task.Task;
 import scripts.fc.missions.fc_ernest_the_chicken.data.ETCSettings;
 import scripts.fc.missions.fc_ernest_the_chicken.data.ETCTasks;
 
-public class FCErnestTheChicken extends QuestScriptManager
+public class FCErnestTheChicken extends QuestScriptManager implements MessageListening07
 {
 	public static final String QUEST_NAME = "Ernest the Chicken";
 	public static final int SETTING = 32;
@@ -22,6 +27,7 @@ public class FCErnestTheChicken extends QuestScriptManager
 	public FCErnestTheChicken(FCMissionScript fcScript)
 	{
 		super(fcScript);
+		MessageListener.addListener(this);
 	}
 
 	@Override
@@ -33,7 +39,11 @@ public class FCErnestTheChicken extends QuestScriptManager
 	@Override
 	public boolean hasReachedEndingCondition()
 	{
-		return ETCSettings.QUEST_COMPLETE.isValid();
+		boolean end = ETCSettings.QUEST_COMPLETE.isValid();
+		if(end && DialogueThread.areDialogueInterfacesUp())
+			DialogueThread.doClickToContinue();
+		
+		return end;
 	}
 
 	@Override
@@ -76,5 +86,32 @@ public class FCErnestTheChicken extends QuestScriptManager
 	{
 		return QUEST_NAME;
 	}
+
+	@Override
+	public void clanMessageReceived(String arg0, String arg1)
+	{}
+
+	@Override
+	public void duelRequestReceived(String arg0, String arg1)
+	{}
+
+	@Override
+	public void personalMessageReceived(String arg0, String arg1)
+	{}
+
+	@Override
+	public void playerMessageReceived(String arg0, String arg1)
+	{}
+
+	@Override
+	public void serverMessageReceived(String m)
+	{
+		if(m.contains("and float to the surface."))
+			Vars.get().add("hasPoisonedFountain", true);
+	}
+
+	@Override
+	public void tradeRequestReceived(String arg0)
+	{}
 
 }
