@@ -114,4 +114,9 @@ public class FCErnestTheChicken extends QuestScriptManager implements MessageLis
 	public void tradeRequestReceived(String arg0)
 	{}
 
+	@Override
+	public int getQuestPointReward() {
+		return 4;
+	}
+
 }
